@@ -1,0 +1,50 @@
+#%RAML 1.0
+title: raml_poc
+
+protocols: [HTTP, HTTPS]
+
+traits:  
+  queryParameterTraits: !include traits/queryParameterTrait.raml
+
+uses:
+  bankCollection: resource-types/bankResourceType.raml
+
+securitySchemes:
+  securityCustomScheme: !include security-scheme/customSecurityScheme.raml
+
+securedBy:
+  - securityCustomScheme
+
+
+/accounts:
+  get:    
+    is:
+      - queryParameterTraits
+  post: 
+  type:
+    bankCollection.accountCollection: 
+      getResponseDataType: !include dataTypes/accountDataType.raml  
+      getResonseExample: !include examples/account.raml 
+      postRequestDataType: !include dataTypes/accountDataType.raml
+      postRequestExample: !include examples/account.raml
+      postResponseExample: !include examples/accountResponse.raml
+          
+  /{accountId}:
+    get:
+    type: 
+      bankCollection.accountCollection: 
+        getResponseDataType: !include dataTypes/accountDataType.raml 
+        getResonseExample: !include examples/account.raml
+    
+              
+
+
+
+            
+                    
+                  
+       
+              
+              
+
+          

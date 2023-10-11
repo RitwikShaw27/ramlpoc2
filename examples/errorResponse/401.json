@@ -1,0 +1,4 @@
+{
+  "errorMessage" : "Accessing Unauthorized resources",
+  "statusCode": "401 - Unauthorized"
+}

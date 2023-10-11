@@ -1,0 +1,35 @@
+#%RAML 1.0 Library
+
+traits:
+  errorResponse: !include ../traits/errorTrait.raml
+  clientIdEnforcement: !include exchange_modules/c55582a5-2bc3-4058-8edd-14961f278a2d/clientidenforcement/1.0.0/clientidenforcement.raml
+  
+
+resourceTypes:
+  accountCollection:
+    get?:
+      is: [errorResponse, clientIdEnforcement]
+      description: This is used to fetch <<resourcePathName>>
+      responses:
+        200:
+          body:
+            application/json:
+              type: <<getResponseDataType>>
+              example: |
+                <<getResonseExample>>
+
+    post?:
+      is: [errorResponse, clientIdEnforcement]
+      description: This is used to create <<resourcePathName>>
+      body:
+        application/json:
+          type: <<postRequestDataType>>
+          example:  |
+            <<postRequestExample>>
+      responses:
+        201:
+          body:
+            application/json:
+              example: |
+                <<postResponseExample>>
+                

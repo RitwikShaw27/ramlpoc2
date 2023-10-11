@@ -1,0 +1,17 @@
+{
+  "main": "raml_poc.raml",
+  "name": "raml_poc2",
+  "groupId": "c55582a5-2bc3-4058-8edd-14961f278a2d",
+  "assetId": "raml_poc2",
+  "version": "1.0.0",
+  "classifier": "raml",
+  "tags": [],
+  "dependencies": [
+    {
+      "groupId": "c55582a5-2bc3-4058-8edd-14961f278a2d",
+      "assetId": "clientidenforcement",
+      "version": "1.0.0"
+    }
+  ],
+  "descriptorVersion": "1.0.0"
+}
